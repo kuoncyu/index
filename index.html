@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuoncyu 的數位學習樂園</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --math-color: #f59e0b;
+            --nature-color: #10b981;
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --card-bg: #ffffff;
+        }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-color); color: var(--text-color); margin: 0; scroll-behavior: smooth; }
+        
+        /* Header Design */
+        header { 
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); 
+            color: white; 
+            padding: 5rem 1rem; 
+            text-align: center; 
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('star.png') center/cover;
+            opacity: 0.1;
+            mix-blend-mode: overlay;
+        }
+        header h1 { margin: 0; font-size: 2.8rem; font-weight: 700; letter-spacing: 2px; position: relative; }
+        header p { font-size: 1.2rem; margin-top: 1rem; opacity: 0.9; position: relative; }
+
+        /* Navigation */
+        nav { display: flex; justify-content: center; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; position: relative; }
+        nav a { 
+            color: white; text-decoration: none; padding: 0.6rem 1.8rem; 
+            border: 1px solid rgba(255,255,255,0.4); border-radius: 50px; 
+            background: rgba(255,255,255,0.1); backdrop-filter: blur(4px);
+            transition: all 0.3s; font-weight: 500;
+        }
+        nav a:hover { background: white; color: #1e3a8a; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+
+        /* Layout */
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
+        
+        .section-wrapper { 
+            text-align: center; margin: 4rem 0 2rem; 
+            display: flex; align-items: center; justify-content: center;
+        }
+        .section-title { 
+            font-size: 2rem; color: #334155; margin: 0 1rem;
+            position: relative; font-weight: 700;
+        }
+        .section-line { height: 2px; background: #e2e8f0; flex-grow: 1; max-width: 100px; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; }
+
+        /* Card Style */
+        .card { 
+            background: var(--card-bg); border-radius: 16px; overflow: hidden; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: all 0.3s ease; 
+            text-decoration: none; color: inherit; display: flex; flex-direction: column; 
+            border: 1px solid #f1f5f9; position: relative;
+        }
+        .card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); }
+        
+        .card-image-container { width: 100%; height: 180px; background: #e2e8f0; overflow: hidden; position: relative; }
+        .card-image { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .card:hover .card-image { transform: scale(1.08); }
+        
+        .card-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+        .card-title { font-size: 1.35rem; margin: 0 0 0.5rem; font-weight: 700; color: #1e293b; }
+        .card-desc { font-size: 0.95rem; color: #64748b; margin-bottom: 1.2rem; flex-grow: 1; line-height: 1.6; }
+        
+        .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+        .card-tag { padding: 0.3rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; }
+        
+        /* Specific Colors */
+        .tag-puzzle { background: #eff6ff; color: #2563eb; }
+        .tag-math { background: #fff7ed; color: #ea580c; }
+        .tag-nature { background: #ecfdf5; color: #059669; }
+
+        .btn-go { 
+            width: 32px; height: 32px; border-radius: 50%; background: #f1f5f9; 
+            display: flex; align-items: center; justify-content: center; color: #64748b;
+            transition: 0.3s;
+        }
+        .card:hover .btn-go { background: #3b82f6; color: white; }
+
+        footer { text-align: center; padding: 4rem 2rem; margin-top: 5rem; background: #f8fafc; color: #94a3b8; border-top: 1px solid #e2e8f0; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Kuoncyu 的數位學習樂園</h1>
+        <p>寓教於樂 • 探索自然 • 邏輯思考</p>
+        <nav>
+            <a href="#puzzle">🧩 益智遊戲</a>
+            <a href="#math">🔢 數學挑戰</a>
+            <a href="#nature">🌿 自然圖鑑</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <div id="puzzle">
+            <div class="section-wrapper">
+                <div class="section-line"></div>
+                <h2 class="section-title">🧩 益智挑戰</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="grid">
+                <a href="https://kuoncyu.github.io/L-chess/" target="_blank" class="card">
+                    <div class="card-image-container"><img src="l-chess.png" alt="L棋" class="card-image"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">L棋 (L-Chess)</h3>
+                        <p class="card-desc">經典策略棋類，考驗你的空間佈局與防守進攻能力。</p>
+                        <div class="card-footer"><span class="card-tag tag-puzzle">策略</span><div class="btn-go">➜</div></div>
+                    </div>
+                </a>
+                <a href="https://kuoncyu.github.io/Idiom-Master/" target="_blank" class="card">
+                    <div class="card-image-container"><img src="idiom.png" alt="成語大師" class="card-image"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">成語大師</h3>
+                        <p class="card-desc">寓教於樂的成語填空與接龍，挑戰你的詞彙量。</p>
+                        <div class="card-footer"><span class="card-tag tag-puzzle">語文</span><div class="btn-go">➜</div></div>
+                    </div>
+                </a>
+                <a href="https://kuoncyu.github.io/science-challenge/" target="_blank" class="card">
+                    <div class="card-image-container"><img src="science.png" alt="自然挑戰" class="card-image"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">自然挑戰</h3>
+                        <p class="card-desc">勇者試煉！關於自然科學的趣味問答與冒險。</p>
+                        <div class="card-footer"><span class="card-tag tag-puzzle">科普</span><div class="btn-go">➜</div></div>
+                    </div>
+                </a>
+                <a href="https://kuoncyu.github.io/memory-challenge/" target="_blank" class="card">
+                    <div class="card-image-container"><img src="memory.png" alt="記憶力大考驗" class="card-image"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">記憶力大考驗</h3>
+                        <p class="card-desc">眼明手快！專注記憶圖片中的顏色與數量。</p>
+                        <div class="card-footer"><span class="card-tag tag-puzzle">腦力</span><div class="btn-go">➜</div></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div id="math">
+            <div class="section-wrapper">
+                <div class="section-line"></div>
+                <h2 class="section-title">🔢 數學神童</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="grid">
+                <a href="https://kuoncyu.github.io/plate-number/" target="_blank" class="card">
+                    <div class="card-image-container"><img src="math.png" alt="車牌數學" class="card-image"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">車牌數學神童</h3>
+                        <p class="card-desc">看到車牌就想算？利用四則運算挑戰快速解題。</p>
+                        <div class="card-footer"><span class="card-tag tag-math">心算</span><div class="btn-go">➜</div></div>
+                    </div>
+                </a>
+                <a href="https://kuoncyu.github.io/The-digital-lock-of-the-time-traveler/" target="_blank" class="card">
+                    <div class="card-image-container"><img src="lock.jpg" alt="時空旅人的數字鎖" class="card-image"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">時空旅人的數字鎖</h3>
+                        <p class="card-desc">解開層層謎題，填入正確運算符號，找出密碼。</p>
+                        <div class="card-footer"><span class="card-tag tag-math">解謎</span><div class="btn-go">➜</div></div>
+                    </div>
+                </a>
+                <a href="https://kuoncyu.github.io/Numerical-logic-puzzle/" target="_blank" class="card">
+                    <div class="card-image-container"><img src="logic.png" alt="數字邏輯" class="card-image"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">數字邏輯解謎</h3>
+                        <p class="card-desc">觀察數字間的規律與大小，推理出隱藏的答案。</p>
+                        <div class="card-footer"><span class="card-tag tag-math">推理</span><div class="btn-go">➜</div></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div id="nature">
+            <div class="section-wrapper">
+                <div class="section-line"></div>
+                <h2 class="section-title">🌿 台灣生態圖鑑</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="grid">
+                <a href="https://kuoncyu.github.io/butterfly/" target="_blank" class="card">
+                    <div class="card-image-container"><img src="butterfly.png" alt="蝴蝶圖鑑" class="card-image"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">蝴蝶圖鑑挑戰</h3>
+                        <p class="card-desc">鳳蝶、斑蝶分辨得出來嗎？台灣蝴蝶王國的美麗身影。</p>
+                        <div class="card-footer"><span class="card-tag tag-nature">昆蟲</span><div class="btn-go">➜</div></div>
+                    </div>
+                </a>
+                <a href="https://kuoncyu.github.io/Place_name/" target="_blank" class="card">
+                    <div class="card-image-container"><img src="place.jpg" alt="地名考驗" class="card-image"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">台灣地名考驗</h3>
+                        <p class="card-desc">看圖猜地名，測試你對台灣地理與歷史的熟悉度。</p>
+                        <div class="card-footer"><span class="card-tag tag-nature">地理</span><div class="btn-go">➜</div></div>
+                    </div>
+                </a>
+                <a href="https://kuoncyu.github.io/Amphibians/" target="_blank" class="card">
+                    <div class="card-image-container"><img src="frog.jpg" alt="兩棲類" class="card-image"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">台灣兩棲類</h3>
+                        <p class="card-desc">探索台灣豐富的蛙類與兩棲生態，聽音辨位。</p>
+                        <div class="card-footer"><span class="card-tag tag-nature">生物</span><div class="btn-go">➜</div></div>
+                    </div>
+                </a>
+                <a href="https://kuoncyu.github.io/plant/" target="_blank" class="card">
+                    <div class="card-image-container"><img src="plant.jpg" alt="常見植物" class="card-image"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">台灣常見植物</h3>
+                        <p class="card-desc">路邊的小花小草叫什麼名字？校園常見植物辨識。</p>
+                        <div class="card-footer"><span class="card-tag tag-nature">植物</span><div class="btn-go">➜</div></div>
+                    </div>
+                </a>
+                <a href="https://kuoncyu.github.io/bird/" target="_blank" class="card">
+                    <div class="card-image-container"><img src="bird.jpg" alt="鳥類挑戰" class="card-image"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">台灣鳥類挑戰</h3>
+                        <p class="card-desc">認識翱翔天際的台灣飛羽，成為小小賞鳥達人。</p>
+                        <div class="card-footer"><span class="card-tag tag-nature">賞鳥</span><div class="btn-go">➜</div></div>
+                    </div>
+                </a>
+                <a href="https://kuoncyu.github.io/sea/" target="_blank" class="card">
+                    <div class="card-image-container"><img src="sea.png" alt="濱海生態" class="card-image"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">台灣濱海生態</h3>
+                        <p class="card-desc">招潮蟹、彈塗魚，一起觀察海岸線的奇妙生物。</p>
+                        <div class="card-footer"><span class="card-tag tag-nature">海洋</span><div class="btn-go">➜</div></div>
+                    </div>
+                </a>
+                <a href="https://kuoncyu.github.io/Star/" target="_blank" class="card">
+                    <div class="card-image-container"><img src="star.png" alt="星空辨識" class="card-image"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">星空辨識</h3>
+                        <p class="card-desc">仰望夜空，你能認出夏季大三角或北極星嗎？</p>
+                        <div class="card-footer"><span class="card-tag tag-nature">天文</span><div class="btn-go">➜</div></div>
+                    </div>
+                </a>
+                <a href="https://kuoncyu.github.io/Deep-sky-object/" target="_blank" class="card">
+                    <div class="card-image-container"><img src="deep-sky.jpg" alt="深空星體" class="card-image"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">深空星體</h3>
+                        <p class="card-desc">探索宇宙深處的星雲、星團與遙遠星系。</p>
+                        <div class="card-footer"><span class="card-tag tag-nature">天文</span><div class="btn-go">➜</div></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Kuoncyu. All Rights Reserved. <br>Design for Learning & Exploration.</p>
+    </footer>
+
+</body>
+</html>
